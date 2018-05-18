@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  ortopedica:
+    container_name: ortopedica
+    build:
+      context: ../ortopedica
+      dockerfile: Dockerfile.devenv.dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ../ortopedica:/app

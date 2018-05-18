@@ -1,6 +1,33 @@
 version: "3"
 
 services:
+  mysql:
+    container_name: ortopedica.mysql
+    image: mysql:5.7.21
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  conta:
+    container_name: ortopedica.conta
+    image: fernandoe/fe-conta-server:local
+    ports:
+      - "9000:8000"
+    volumes:
+      - ../fe-conta-server/src:/app
+    depends_on:
+      - mysql
+    environment:
+      DJANGO_SETTINGS_MODULE: 'server.settings.docker'
+      DATABASE_URL: mysql://root:password@mysql:3306/conta
+      no_proxy: mysql
+    stdin_open: true
+    tty: true
+
   ortopedica:
     container_name: ortopedica
     build:
@@ -10,3 +37,6 @@ services:
       - "4200:4200"
     volumes:
       - ../ortopedica:/app
+
+volumes:
+  mysql-data:

@@ -11,3 +11,7 @@ up:
 
 git.pull:
 	./scripts/repo.sh pull
+
+docker.pull:
+	docker pull node:8.11.2
+	docker pull mysql:5.7.21

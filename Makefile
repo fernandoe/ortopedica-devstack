@@ -8,3 +8,6 @@ build:
 
 up:
 	docker-compose up
+
+git.pull:
+	./scripts/repo.sh pull

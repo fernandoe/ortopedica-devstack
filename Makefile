@@ -15,3 +15,9 @@ git.pull:
 docker.pull:
 	docker pull node:8.11.2
 	docker pull mysql:5.7.21
+
+%-migrate:
+	docker exec -i ortopedica.$* python manage.py migrate
+
+%-createsuperuser:
+	docker exec -it ortopedica.$* python manage.py createsuperuser

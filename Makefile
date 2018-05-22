@@ -18,6 +18,9 @@ git.clone:
 git.pull:
 	./scripts/repo.sh pull
 
+git.status:
+	./scripts/repo.sh status
+
 docker.pull:
 	docker pull node:8.11.2
 	docker pull mysql:5.7.21

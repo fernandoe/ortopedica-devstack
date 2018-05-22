@@ -8,3 +8,4 @@
 - Add git.pull task to the Makefile
 - Add docker.pull task to pull all images used by the devstack
 - Add %-migrate and %-createsuperuser tasks to manage the database
+- Add git.clone task to the Makefile

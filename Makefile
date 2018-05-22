@@ -9,6 +9,9 @@ build:
 up:
 	docker-compose up
 
+git.clone:
+	./scripts/repo.sh clone
+
 git.pull:
 	./scripts/repo.sh pull
 

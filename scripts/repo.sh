@@ -16,7 +16,6 @@ fi
 repos=(
     "git@github.com:fernandoe/fe-conta-server.git"
     "git@github.com:fernandoe/ortopedica.git"
-    "git@github.com:fernandoe/ortopedica-server.git"
 )
 
 name_pattern=".*fernandoe/(.*).git"

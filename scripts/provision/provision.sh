@@ -22,11 +22,11 @@ sleep 5
 
 echo -e "MySQL ready"
 
-echo -e "${GREEN}Creating databases and users...${NC}"
+echo -e "${GREEN} Creating databases and users... ${NC}"
 docker exec -i ortopedica.mysql mysql -uroot -ppassword mysql < ./scripts/provision/provision.sql
 
 ./scripts/provision/provision-conta.sh
 
 docker image prune -f
 
-echo -e "${GREEN}Provisioning complete!${NC}"
+echo -e "${GREEN} Provisioning complete! ${NC}"

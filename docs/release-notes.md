@@ -11,3 +11,4 @@
 - Add git.clone task to the Makefile
 - Add provision task to the Makefile (mysql)
 - Create the conta database and run migrations during the provision task
+- Create a superuser demo@example.com during the provision task

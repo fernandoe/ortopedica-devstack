@@ -10,3 +10,4 @@
 - Add %-migrate and %-createsuperuser tasks to manage the database
 - Add git.clone task to the Makefile
 - Add provision task to the Makefile (mysql)
+- Create the conta database and run migrations during the provision task

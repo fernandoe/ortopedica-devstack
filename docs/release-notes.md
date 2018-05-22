@@ -12,3 +12,4 @@
 - Add provision task to the Makefile (mysql)
 - Create the conta database and run migrations during the provision task
 - Create a superuser demo@example.com during the provision task
+- Add project https://github.com/fernandoe/fe-pessoa-server

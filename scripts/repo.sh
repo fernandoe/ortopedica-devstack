@@ -15,6 +15,7 @@ fi
 
 repos=(
     "git@github.com:fernandoe/fe-conta-server.git"
+    "git@github.com:fernandoe/fe-pessoa-server.git"
     "git@github.com:fernandoe/ortopedica.git"
 )
 

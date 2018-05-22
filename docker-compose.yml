@@ -28,6 +28,23 @@ services:
     stdin_open: true
     tty: true
 
+  pessoa:
+    container_name: ortopedica.pessoa
+    image: fernandoe/fe-pessoa-server:local
+    ports:
+      - "9001:8000"
+    volumes:
+      - ../fe-pessoa-server/src:/app
+    depends_on:
+      - mysql
+      - conta
+    environment:
+      DJANGO_SETTINGS_MODULE: 'server.settings.docker'
+      DATABASE_URL: mysql://root:password@mysql:3306/pessoa
+      no_proxy: mysql,conta
+    stdin_open: true
+    tty: true
+
   ortopedica:
     container_name: ortopedica
     build:

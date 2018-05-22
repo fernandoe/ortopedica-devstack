@@ -6,6 +6,9 @@ export COMPOSE_PROJECT_NAME=ortopedica
 build:
 	docker-compose build ortopedica
 
+provision:
+	./scripts/provision/provision.sh
+
 up:
 	docker-compose up
 

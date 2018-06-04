@@ -24,6 +24,7 @@ git.status:
 docker.pull:
 	docker pull node:8.11.2
 	docker pull mysql:5.7.21
+	docker pull fernandoe/docker-python:3.6.5-alpine
 
 %-migrate:
 	docker exec -i ortopedica.$* python manage.py migrate

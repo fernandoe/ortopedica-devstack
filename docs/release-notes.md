@@ -15,3 +15,5 @@
 - Create a superuser demo@example.com during the provision task
 - Add project https://github.com/fernandoe/fe-pessoa-server
 - Add project https://github.com/fernandoe/fe-endereco-server
+- Add project https://github.com/fernandoe/fe-ortopedica-api
+- Add project https://github.com/fernandoe/cookiecutter-fe-microservice-api

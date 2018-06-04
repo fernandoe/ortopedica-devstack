@@ -62,6 +62,23 @@ services:
     stdin_open: true
     tty: true
 
+  endereco:
+    container_name: ortopedica.ortopedica-api
+    image: fernandoe/fe-ortopedica-api:local
+    ports:
+      - "9003:8000"
+    volumes:
+      - ../fe-ortopedica-api/src:/app
+    depends_on:
+      - mysql
+      - conta
+    environment:
+      DJANGO_SETTINGS_MODULE: 'server.settings.docker'
+      DATABASE_URL: mysql://root:password@mysql:3306/ortopedica
+      no_proxy: mysql,conta
+    stdin_open: true
+    tty: true
+
   ortopedica:
     container_name: ortopedica
     build:

@@ -27,6 +27,8 @@ echo -e "${GREEN} Creating databases and users... ${NC}"
 docker exec -i ortopedica.mysql mysql -uroot -ppassword mysql < ./scripts/provision/provision.sql
 
 ./scripts/provision/provision-conta.sh
+./scripts/provision/provision-endereco.sh
+./scripts/provision/provision-ortopedica.sh
 ./scripts/provision/provision-pessoa.sh
 
 docker image prune -f

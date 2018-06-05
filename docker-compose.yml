@@ -62,7 +62,7 @@ services:
     stdin_open: true
     tty: true
 
-  endereco:
+  ortopedica-api:
     container_name: ortopedica.ortopedica-api
     image: fernandoe/fe-ortopedica-api:local
     ports:

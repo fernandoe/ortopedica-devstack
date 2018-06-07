@@ -17,3 +17,4 @@
 - Add project https://github.com/fernandoe/fe-endereco-server
 - Add project https://github.com/fernandoe/fe-ortopedica-api
 - Add project https://github.com/fernandoe/cookiecutter-fe-microservice-api
+- Add mysql-init-scripts with the ortopedica scripts

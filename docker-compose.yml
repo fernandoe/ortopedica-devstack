@@ -62,9 +62,10 @@ services:
     stdin_open: true
     tty: true
 
-  ortopedica-api:
-    container_name: ortopedica.ortopedica-api
-    image: fernandoe/fe-ortopedica-api:local
+  api.ortopedica:
+    container_name: api.ortopedica
+    # image: fernandoe/fe-ortopedica-api:local
+    build: ../fe-ortopedica-api
     ports:
       - "9003:8000"
     volumes:

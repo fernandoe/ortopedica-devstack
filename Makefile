@@ -1,10 +1,12 @@
 DEVSTACK_WORKSPACE ?= $(shell pwd)/..
 
-export DEVSTACK_WORKSPACE
 export COMPOSE_PROJECT_NAME=ortopedica
 
 build:
-	docker-compose build ortopedica
+	docker-compose build api.ortopedica
+
+rm:
+	docker-compose rm
 
 provision:
 	./scripts/provision/provision.sh

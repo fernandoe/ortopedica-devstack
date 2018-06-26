@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysql:
-    container_name: ortopedica.mysql
+    container_name: ortopedica-mysql
     image: mysql:5.7.21
     volumes:
       - mysql-data:/var/lib/mysql
@@ -12,8 +12,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
 
-  conta:
-    container_name: ortopedica.conta
+  api-conta:
+    container_name: api-conta
     image: fernandoe/fe-conta-server:local
     ports:
       - "9000:8000"
@@ -28,8 +28,8 @@ services:
     stdin_open: true
     tty: true
 
-  pessoa:
-    container_name: ortopedica.pessoa
+  api-pessoa:
+    container_name: api-pessoa
     image: fernandoe/fe-pessoa-server:local
     ports:
       - "9001:8000"
@@ -37,7 +37,7 @@ services:
       - ../fe-pessoa-server/src:/app
     depends_on:
       - mysql
-      - conta
+      - api-conta
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/pessoa
@@ -45,8 +45,8 @@ services:
     stdin_open: true
     tty: true
 
-  endereco:
-    container_name: ortopedica.endereco
+  api-endereco:
+    container_name: api-endereco
     image: fernandoe/fe-endereco-server:local
     ports:
       - "9002:8000"
@@ -54,7 +54,7 @@ services:
       - ../fe-endereco-server/src:/app
     depends_on:
       - mysql
-      - conta
+      - api-conta
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/endereco
@@ -62,9 +62,8 @@ services:
     stdin_open: true
     tty: true
 
-  api.ortopedica:
-    container_name: api.ortopedica
-    # image: fernandoe/fe-ortopedica-api:local
+  api-ortopedica:
+    container_name: api-ortopedica
     build: ../fe-ortopedica-api
     ports:
       - "9003:8000"
@@ -72,7 +71,7 @@ services:
       - ../fe-ortopedica-api/src:/app
     depends_on:
       - mysql
-      - conta
+      - api-conta
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/ortopedica

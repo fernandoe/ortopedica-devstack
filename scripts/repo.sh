@@ -15,10 +15,10 @@ fi
 
 repos=(
     "git@github.com:fernandoe/cookiecutter-fe-microservice-api.git"
-    "git@github.com:fernandoe/fe-conta-server.git"
+    "git@github.com:fernandoe/fe-conta-api.git"
     "git@github.com:fernandoe/fe-endereco-server.git"
     "git@github.com:fernandoe/fe-ortopedica-api.git"
-    "git@github.com:fernandoe/fe-pessoa-server.git"
+    "git@github.com:fernandoe/fe-pessoa-api.git"
     "git@github.com:fernandoe/ortopedica.git"
 )
 

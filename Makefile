@@ -25,6 +25,9 @@ compose-logs-%:
 compose-restart-%:
 	docker-compose restart $*
 
+up.mysql:
+	docker-compose up mysql
+
 git.clone:
 	./scripts/repo.sh clone
 

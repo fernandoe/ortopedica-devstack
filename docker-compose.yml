@@ -14,11 +14,11 @@ services:
 
   api-conta:
     container_name: api-conta
-    image: fernandoe/fe-conta-server:local
+    image: fernandoe/fe-conta-api:0.0.1
     ports:
       - "9000:8000"
     volumes:
-      - ../fe-conta-server/src:/app
+      - ../fe-conta-api/src:/app
     depends_on:
       - mysql
     environment:
@@ -30,11 +30,11 @@ services:
 
   api-pessoa:
     container_name: api-pessoa
-    image: fernandoe/fe-pessoa-server:local
+    image: fernandoe/fe-pessoa-api:0.0.1
     ports:
       - "9001:8000"
     volumes:
-      - ../fe-pessoa-server/src:/app
+      - ../fe-pessoa-api/src:/app
     depends_on:
       - mysql
       - api-conta
@@ -47,7 +47,7 @@ services:
 
   api-endereco:
     container_name: api-endereco
-    image: fernandoe/fe-endereco-server:local
+    image: fernandoe/fe-endereco-server:0.0.1
     ports:
       - "9002:8000"
     volumes:

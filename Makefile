@@ -12,7 +12,7 @@ compose-build-%:
 
 compose-up:
 	docker-compose up -d
-	
+
 compose-up-%:
 	docker-compose up $*
 
@@ -27,7 +27,6 @@ compose-restart-%:
 
 compose-stop-%:
 	docker-compose stop $*
-
 
 git.clone:
 	./scripts/repo.sh clone

@@ -5,13 +5,13 @@
 
 - https://github.com/fernandoe/cookiecutter-fe-microservice-api
   - The cookiecutter used to start the project (keep updated)
-- git@github.com:fernandoe/fe-conta-server.git
+- git@github.com:fernandoe/fe-conta-api.git
   - Account management
 - git@github.com:fernandoe/fe-endereco-server.git
   - Address management
 - git@github.com:fernandoe/fe-ortopedica-api.git
   - Mainly API for the service
-- git@github.com:fernandoe/fe-pessoa-server.git
+- git@github.com:fernandoe/fe-pessoa-api.git
   - Supplies and customers management
 - git@github.com:fernandoe/ortopedica.git
   - Front-end application

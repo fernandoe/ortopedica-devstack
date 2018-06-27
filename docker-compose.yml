@@ -75,6 +75,7 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/ortopedica
+      CONTA_SERVICE_HOST: 'api-conta'
       no_proxy: mysql,conta
     stdin_open: true
     tty: true

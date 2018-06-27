@@ -25,6 +25,10 @@ compose-logs-%:
 compose-restart-%:
 	docker-compose restart $*
 
+compose-stop-%:
+	docker-compose stop $*
+
+
 git.clone:
 	./scripts/repo.sh clone
 
@@ -40,8 +44,8 @@ docker.pull:
 	docker pull nginx:1.13.9-alpine
 	docker pull node:8.11.2
 
-%-migrate:
-	docker exec -i ortopedica.$* python manage.py migrate
+docker-migrate-%:
+	docker exec -i $* python manage.py migrate
 
-%-createsuperuser:
-	docker exec -it ortopedica.$* python manage.py createsuperuser
+docker-createsuperuser-%:
+	docker exec -it $* python manage.py createsuperuser

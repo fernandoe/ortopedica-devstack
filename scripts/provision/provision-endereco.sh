@@ -12,9 +12,9 @@ NC='\033[0m' # No Color
 echo -e "${YELLOW} Starting script provision-endereco.sh... ${NC}"
 
 echo -e "${GREEN} Starting endereco... ${NC}"
-docker-compose up -d endereco
+docker-compose up -d api-endereco
 
 echo -e "${GREEN} Running migrations...${NC}"
-docker exec -i ortopedica.endereco python manage.py migrate
+docker exec -i api-endereco python manage.py migrate
 
 echo -e "${YELLOW} Finishing script provision-endereco.sh... ${NC}"

@@ -25,6 +25,9 @@ compose-logs-%:
 compose-restart-%:
 	docker-compose restart $*
 
+compose-stop:
+	docker-compose stop
+
 compose-stop-%:
 	docker-compose stop $*
 

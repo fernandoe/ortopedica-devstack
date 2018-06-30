@@ -13,7 +13,7 @@ docker-compose up -d mysql
 
 # Ensure the MySQL server is online and usable
 echo "Waiting for MySQL"
-until docker exec -i ortopedica.mysql mysql -uroot -ppassword -se "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'root')" &> /dev/null
+until docker exec -i ortopedica-mysql mysql -uroot -ppassword -se "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'root')" &> /dev/null
 do
   printf "."
   sleep 1
@@ -24,7 +24,7 @@ sleep 5
 echo -e "MySQL ready"
 
 echo -e "${GREEN} Creating databases and users... ${NC}"
-docker exec -i ortopedica.mysql mysql -uroot -ppassword mysql < ./scripts/provision/provision.sql
+docker exec -i ortopedica-mysql mysql -uroot -ppassword mysql < ./scripts/provision/provision.sql
 
 ./scripts/provision/provision-conta.sh
 ./scripts/provision/provision-endereco.sh

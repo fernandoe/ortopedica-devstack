@@ -12,9 +12,9 @@ NC='\033[0m' # No Color
 echo -e "${YELLOW} Starting script provision-pessoa.sh... ${NC}"
 
 echo -e "${GREEN} Starting pessoa... ${NC}"
-docker-compose up -d pessoa
+docker-compose up -d api-pessoa
 
 echo -e "${GREEN} Running migrations...${NC}"
-docker exec -i ortopedica.pessoa python manage.py migrate
+docker exec -i api-pessoa python manage.py migrate
 
 echo -e "${YELLOW} Finishing script provision-pessoa.sh... ${NC}"

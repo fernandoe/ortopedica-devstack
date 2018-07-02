@@ -51,3 +51,6 @@ docker-migrate-%:
 
 docker-createsuperuser-%:
 	docker exec -it $* python manage.py createsuperuser
+
+docker-shell-%:
+	docker exec -it $* env TERM=$(TERM) sh

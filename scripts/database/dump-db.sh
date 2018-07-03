@@ -3,9 +3,9 @@
 # Dump the specified database to a file of the same name.
 #
 # Example:
-#   $ dump-db edxapp
+#   $ dump-db conta
 #
-# This will dump the edxapp database to a file named exapp.sql.
+# This will dump the conta database to a file named conta.sql.
 
 if [ -z "$1" ]
 then
@@ -14,5 +14,5 @@ then
 fi
 
 echo "Dumping the $1 database..."
-docker exec -i ortopedica.mysql mysqldump -ppassword --add-drop-database --skip-add-drop-table -B $1 > $1.sql
+docker exec -i ortopedica-mysql mysqldump -ppassword --add-drop-database --skip-add-drop-table -B $1 > ./database-backups/$1.sql
 echo "Finished dumping the $1 database!"

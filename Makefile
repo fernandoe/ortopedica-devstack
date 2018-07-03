@@ -54,3 +54,6 @@ docker-createsuperuser-%:
 
 docker-shell-%:
 	docker exec -it $* env TERM=$(TERM) sh
+
+dump-db-%:
+	./scripts/database/dump-db.sh $*

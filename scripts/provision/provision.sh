@@ -23,8 +23,11 @@ sleep 5
 
 echo -e "MySQL ready"
 
-echo -e "${GREEN} Creating databases and users... ${NC}"
-docker exec -i ortopedica-mysql mysql -uroot -ppassword mysql < ./scripts/provision/provision.sql
+echo -e "${GREEN} Creating databases... ${NC}"
+docker exec -i ortopedica-mysql mysql -uroot -ppassword conta < ./database-backups/conta.sql
+docker exec -i ortopedica-mysql mysql -uroot -ppassword endereco < ./database-backups/endereco.sql
+docker exec -i ortopedica-mysql mysql -uroot -ppassword ortopedica < ./database-backups/ortopedica.sql
+docker exec -i ortopedica-mysql mysql -uroot -ppassword pessoa < ./database-backups/pessoa.sql
 
 ./scripts/provision/provision-conta.sh
 ./scripts/provision/provision-endereco.sh

@@ -47,11 +47,11 @@ services:
 
   api-endereco:
     container_name: api-endereco
-    image: fernandoe/fe-endereco-server:0.0.1
+    image: fernandoe/fe-endereco-api:0.0.1
     ports:
       - "9002:8000"
     volumes:
-      - ../fe-endereco-server/src:/app
+      - ../fe-endereco-api/src:/app
     depends_on:
       - mysql
       - api-conta

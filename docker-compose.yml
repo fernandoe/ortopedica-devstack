@@ -64,7 +64,8 @@ services:
 
   api-ortopedica:
     container_name: api-ortopedica
-    build: ../fe-ortopedica-api
+    # build: ../fe-ortopedica-api
+    image: fernandoe/fe-ortopedica-api:0.0.5
     ports:
       - "9003:8000"
     volumes:

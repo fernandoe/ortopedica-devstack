@@ -1,20 +1,11 @@
-# ortopedica-devenv
+# ortopedica-devstack
 
 
-# Repositories
+# Up and Running
 
-- https://github.com/fernandoe/cookiecutter-fe-microservice-api
-  - The cookiecutter used to start the project (keep updated)
-- git@github.com:fernandoe/fe-conta-api.git
-  - Account management
-- git@github.com:fernandoe/fe-endereco-server.git
-  - Address management
-- git@github.com:fernandoe/fe-ortopedica-api.git
-  - Mainly API for the service
-- git@github.com:fernandoe/fe-pessoa-api.git
-  - Supplies and customers management
-- git@github.com:fernandoe/ortopedica.git
-  - Front-end application
+```bash
+make devstack-up
+```
 
 
 
@@ -26,25 +17,12 @@
 
 
 
-# Tasks
-
-
-
-## build
-
-Build all necessary image to run the environment.
-
-
-
-## up
-
-Start the environment with all components.
-
-
-
-
 # Docker Images
 
 - node:8.11.2
 - mysql:5.7.21
 - fernandoe/docker-python:3.6.5-alpine
+- fernandoe/fe-conta-api:0.0.1
+- fernandoe/fe-pessoa-api:0.0.1
+- fernandoe/fe-endereco-api:0.0.1
+- fernandoe/fe-ortopedica-api:0.0.5

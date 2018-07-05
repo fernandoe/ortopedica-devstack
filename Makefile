@@ -4,6 +4,24 @@ export DEVSTACK_WORKSPACE
 export COMPOSE_PROJECT_NAME=ortopedica
 
 
+devstack-up: devstack-docker-pull-images devstack-clone
+
+devstack-docker-pull-images:
+	docker pull fernandoe/docker-python:3.6.5-alpine
+	docker pull mysql:5.7.21
+	docker pull nginx:1.13.9-alpine
+	docker pull node:8.11.2
+	docker pull fernandoe/fe-conta-api:0.0.1
+	docker pull fernandoe/fe-pessoa-api:0.0.1
+	docker pull fernandoe/fe-endereco-api:0.0.1
+	docker pull fernandoe/fe-ortopedica-api:0.0.5
+
+devstack-clone:
+	./scripts/repo.sh clone
+
+devstack-pull:
+	./scripts/repo.sh pull
+
 provision:
 	./scripts/provision/provision.sh
 
@@ -31,20 +49,8 @@ compose-stop:
 compose-stop-%:
 	docker-compose stop $*
 
-git.clone:
-	./scripts/repo.sh clone
-
-git.pull:
-	./scripts/repo.sh pull
-
 git.status:
 	./scripts/repo.sh status
-
-docker.pull:
-	docker pull fernandoe/docker-python:3.6.5-alpine
-	docker pull mysql:5.7.21
-	docker pull nginx:1.13.9-alpine
-	docker pull node:8.11.2
 
 docker-migrate-%:
 	docker exec -i $* python manage.py migrate

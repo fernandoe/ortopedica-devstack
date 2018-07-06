@@ -15,6 +15,7 @@ devstack-docker-pull-images:
 	docker pull fernandoe/fe-pessoa-api:0.0.1
 	docker pull fernandoe/fe-endereco-api:0.0.1
 	docker pull fernandoe/fe-ortopedica-api:0.0.5
+	docker pull fernandoe/ortopedica:0.0.1
 
 devstack-clone:
 	./scripts/repo.sh clone
@@ -39,6 +40,9 @@ compose-rm:
 
 compose-logs-%:
 	docker-compose logs --tail 50 -f $*
+
+compose-logs:
+	docker-compose logs --tail 50 -f
 
 compose-restart-%:
 	docker-compose restart $*

@@ -11,7 +11,7 @@ devstack-docker-pull-images:
 	docker pull mysql:5.7.21
 	docker pull nginx:1.13.9-alpine
 	docker pull node:8.11.2
-	docker pull fernandoe/fe-conta-api:0.0.1
+	docker pull fernandoe/fe-conta-api:0.0.2
 	docker pull fernandoe/fe-pessoa-api:0.0.1
 	docker pull fernandoe/fe-endereco-api:0.0.1
 	docker pull fernandoe/fe-ortopedica-api:0.0.5
@@ -23,17 +23,20 @@ devstack-clone:
 devstack-pull:
 	./scripts/repo.sh pull
 
+devstack-status:
+	./scripts/repo.sh status
+
 provision:
 	./scripts/provision/provision.sh
 
-compose-build-%:
-	docker-compose build $*
-
 compose-up:
-	docker-compose -f docker-compose.yml -f docker-compose-api-ortopedica.yml up -d
+	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up
+
+compose-build-%:
+	docker-compose -f docker-compose.yml -f docker-compose-dev.yml build $*
 
 compose-up-%:
-	docker-compose up $*
+	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up $*
 
 compose-rm:
 	docker-compose rm
@@ -52,9 +55,6 @@ compose-stop:
 
 compose-stop-%:
 	docker-compose stop $*
-
-git.status:
-	./scripts/repo.sh status
 
 docker-migrate-%:
 	docker exec -i $* python manage.py migrate

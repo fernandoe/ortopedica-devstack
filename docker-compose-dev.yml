@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  api-conta:
+    build: ../fe-conta-api
+    volumes:
+      - ../fe-conta-api/src:/app
+
+  api-ortopedica:
+    build: ../fe-ortopedica-api
+    volumes:
+      - ../fe-ortopedica-api/src:/app
+
+  ortopedica:
+    build: ../ortopedica
+    volumes:
+      - ../ortopedica:/app

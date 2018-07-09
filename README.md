@@ -22,7 +22,7 @@ make devstack-up
 - node:8.11.2
 - mysql:5.7.21
 - fernandoe/docker-python:3.6.5-alpine
-- fernandoe/fe-conta-api:0.0.1
+- fernandoe/fe-conta-api:0.0.2
 - fernandoe/fe-pessoa-api:0.0.1
 - fernandoe/fe-endereco-api:0.0.1
 - fernandoe/fe-ortopedica-api:0.0.5

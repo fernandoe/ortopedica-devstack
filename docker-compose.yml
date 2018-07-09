@@ -14,17 +14,15 @@ services:
 
   api-conta:
     container_name: api-conta
-    image: fernandoe/fe-conta-api:0.0.1
+    image: fernandoe/fe-conta-api:0.0.2
     ports:
       - "9000:8000"
-    volumes:
-      - ../fe-conta-api/src:/app
     depends_on:
       - mysql
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/conta
-      VERSION: 0.0.1
+      VERSION: 0.0.2
       no_proxy: mysql
     stdin_open: true
     tty: true
@@ -69,8 +67,6 @@ services:
     image: fernandoe/fe-ortopedica-api:0.0.5
     ports:
       - "9003:8000"
-    volumes:
-      - ../fe-ortopedica-api/src:/app
     depends_on:
       - mysql
       - api-conta
@@ -85,14 +81,10 @@ services:
   ortopedica:
     container_name: ortopedica
     image: fernandoe/ortopedica:0.0.1
-    # image: fernandoe/ortopedica:local
     build:
       context: ../ortopedica
-    #   dockerfile: Dockerfile.devenv.dockerfile
     ports:
       - "4200:4200"
-    volumes:
-      - ../ortopedica:/app
 
 volumes:
   mysql-data:

@@ -84,9 +84,10 @@ services:
   ortopedica:
     container_name: ortopedica
     image: fernandoe/ortopedica:0.0.1
+    # image: fernandoe/ortopedica:local
     build:
       context: ../ortopedica
-      dockerfile: Dockerfile.devenv.dockerfile
+    #   dockerfile: Dockerfile.devenv.dockerfile
     ports:
       - "4200:4200"
     volumes:

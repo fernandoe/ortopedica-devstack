@@ -30,7 +30,7 @@ compose-build-%:
 	docker-compose build $*
 
 compose-up:
-	docker-compose up -d
+	docker-compose -f docker-compose.yml -f docker-compose-api-ortopedica.yml up -d
 
 compose-up-%:
 	docker-compose up $*

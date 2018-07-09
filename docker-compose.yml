@@ -24,6 +24,7 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/conta
+      VERSION: 0.0.1
       no_proxy: mysql
     stdin_open: true
     tty: true

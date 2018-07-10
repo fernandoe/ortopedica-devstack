@@ -29,7 +29,7 @@ services:
 
   api-pessoa:
     container_name: api-pessoa
-    image: fernandoe/fe-pessoa-api:0.0.1
+    image: fernandoe/fe-pessoa-api:0.0.2
     ports:
       - "9001:8000"
     volumes:
@@ -41,6 +41,7 @@ services:
       DJANGO_SETTINGS_MODULE: 'server.settings.docker'
       DATABASE_URL: mysql://root:password@mysql:3306/pessoa
       no_proxy: mysql,conta
+      VERSION: 0.0.2
     stdin_open: true
     tty: true
 

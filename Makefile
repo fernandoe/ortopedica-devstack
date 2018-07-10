@@ -12,7 +12,7 @@ devstack-docker-pull-images:
 	docker pull nginx:1.13.9-alpine
 	docker pull node:8.11.2
 	docker pull fernandoe/fe-conta-api:0.0.2
-	docker pull fernandoe/fe-pessoa-api:0.0.1
+	docker pull fernandoe/fe-pessoa-api:0.0.2
 	docker pull fernandoe/fe-endereco-api:0.0.1
 	docker pull fernandoe/fe-ortopedica-api:0.0.5
 	docker pull fernandoe/ortopedica:0.0.1

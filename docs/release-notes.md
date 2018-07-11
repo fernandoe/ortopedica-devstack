@@ -1,7 +1,7 @@
 # Release Notes
 
 
-## 0.0.1-DEV
+## 0.0.1
 
 - Add the docker-compose.yml with the *ortopedica* definition
 - Add build and up tasks to the Makefile

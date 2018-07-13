@@ -15,6 +15,8 @@ services:
   api-conta:
     container_name: api-conta
     image: fernandoe/fe-conta-api:0.0.2
+    volumes:
+      - ../fe-conta-api/src:/app
     ports:
       - "9000:8000"
     depends_on:
@@ -30,10 +32,10 @@ services:
   api-pessoa:
     container_name: api-pessoa
     image: fernandoe/fe-pessoa-api:0.0.2
-    ports:
-      - "9001:8000"
     volumes:
       - ../fe-pessoa-api/src:/app
+    ports:
+      - "9001:8000"
     depends_on:
       - mysql
       - api-conta
@@ -48,10 +50,10 @@ services:
   api-endereco:
     container_name: api-endereco
     image: fernandoe/fe-endereco-api:0.0.1
-    ports:
-      - "9002:8000"
     volumes:
       - ../fe-endereco-api/src:/app
+    ports:
+      - "9002:8000"
     depends_on:
       - mysql
       - api-conta
@@ -64,8 +66,9 @@ services:
 
   api-ortopedica:
     container_name: api-ortopedica
-    # build: ../fe-ortopedica-api
     image: fernandoe/fe-ortopedica-api:0.0.5
+    volumes:
+      - ../fe-ortopedica-api/src:/app
     ports:
       - "9003:8000"
     depends_on:

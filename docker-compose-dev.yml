@@ -6,6 +6,16 @@ services:
     volumes:
       - ../fe-conta-api/src:/app
 
+  api-pessoa:
+    build: ../fe-pessoa-api
+    volumes:
+      - ../fe-pessoa-api/src:/app
+
+  api-endereco:
+    build: ../fe-pessoa-api
+    volumes:
+      - ../fe-pessoa-api/src:/app
+
   api-ortopedica:
     build: ../fe-ortopedica-api
     volumes:

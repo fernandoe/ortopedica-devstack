@@ -1,6 +1,13 @@
 # Release Notes
 
 
+## 0.0.2-DEV
+
+
+
+
+
+
 ## 0.0.1
 
 - Add the docker-compose.yml with the *ortopedica* definition

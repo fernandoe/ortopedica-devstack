@@ -1,0 +1,6 @@
+cookiecutter-fe-microservice-api     release-0.0.1
+fe-conta-api                         0.0.2
+fe-endereco-api                      0.0.1
+fe-ortopedica-api                    0.0.5
+fe-pessoa-api                        0.0.2
+ortopedica                           0.0.1

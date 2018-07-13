@@ -17,8 +17,9 @@ devstack-docker-pull-images:
 	docker pull fernandoe/fe-ortopedica-api:0.0.5
 	docker pull fernandoe/ortopedica:0.0.1
 
-devstack-clone:
-	./scripts/repo.sh clone
+devstack-git-clone:
+	# ./scripts/repo.sh clone
+	./scripts/repositories/clone.sh < projects.txt
 
 devstack-pull:
 	./scripts/repo.sh pull

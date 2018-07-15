@@ -49,7 +49,7 @@ services:
 
   api-endereco:
     container_name: api-endereco
-    image: fernandoe/fe-endereco-api:0.0.1
+    image: fernandoe/fe-endereco-api:0.0.2
     volumes:
       - ../fe-endereco-api/src:/app
     ports:
@@ -84,9 +84,9 @@ services:
 
   ortopedica:
     container_name: ortopedica
-    image: fernandoe/ortopedica:0.0.1
+    image: fernandoe/ortopedica:release-0.0.2
     ports:
-      - "80:80"
+      - "4200:4200"
 
 volumes:
   mysql-data:

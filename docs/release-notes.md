@@ -4,6 +4,7 @@
 ## 0.0.2-DEV
 
 - Update fernandoe/fe-endereco-api to version 0.0.2
+- Dump endereco database
 
 
 

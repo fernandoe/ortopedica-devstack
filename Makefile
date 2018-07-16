@@ -18,14 +18,13 @@ devstack-docker-pull-images:
 	docker pull fernandoe/ortopedica:0.0.1
 
 devstack-git-clone:
-	# ./scripts/repo.sh clone
 	./scripts/repositories/clone.sh < projects.txt
 
-devstack-pull:
-	./scripts/repo.sh pull
+devstack-git-pull:
+	./scripts/repositories/repo.sh pull
 
-devstack-status:
-	./scripts/repo.sh status
+devstack-git-status:
+	./scripts/repositories/repo.sh status
 
 provision:
 	./scripts/provision/provision.sh

@@ -17,7 +17,4 @@ docker-compose up -d api-ortopedica
 echo -e "${GREEN} Running migrations...${NC}"
 docker exec -i api-ortopedica python manage.py migrate
 
-echo -e "${GREEN} Creating superuser... ${NC}"
-docker exec -i api-ortopedica python manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('demo@example.com', 'password') if not User.objects.filter(email='demo@example.com').exists() else None;"
-
 echo -e "${YELLOW} Finishing script provision-ortopedica.sh... ${NC}"

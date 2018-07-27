@@ -122,7 +122,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_fe_core_user_uuid` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_fe_core_user_uuid` FOREIGN KEY (`user_id`) REFERENCES `fe_core_user` (`uuid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,6 +229,7 @@ CREATE TABLE `fe_core_entity` (
 
 LOCK TABLES `fe_core_entity` WRITE;
 /*!40000 ALTER TABLE `fe_core_entity` DISABLE KEYS */;
+INSERT INTO `fe_core_entity` VALUES ('670d7a30a6b54feaaffa94191e891d08','2018-07-27 16:05:17.250315','2018-07-27 16:05:17.250373','Demo');
 /*!40000 ALTER TABLE `fe_core_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +263,7 @@ CREATE TABLE `fe_core_user` (
 
 LOCK TABLES `fe_core_user` WRITE;
 /*!40000 ALTER TABLE `fe_core_user` DISABLE KEYS */;
-INSERT INTO `fe_core_user` VALUES ('pbkdf2_sha256$100000$kDu3LMhGtxS4$bloC7wnswx34P+p/IAmKxEpnsRcR0vfcHbkq/2OiG1Q=',NULL,1,'670d7a30a6b54feaaffa94191e891d08','2018-07-27 14:58:40.958414','2018-07-27 14:58:40.962807','demo@example.com',1,1,NULL);
+INSERT INTO `fe_core_user` VALUES ('pbkdf2_sha256$100000$kDu3LMhGtxS4$bloC7wnswx34P+p/IAmKxEpnsRcR0vfcHbkq/2OiG1Q=','2018-07-27 16:05:02.000000',1,'670d7a30a6b54feaaffa94191e891d08','2018-07-27 14:58:40.958414','2018-07-27 16:05:31.830460','demo@example.com',1,1,'670d7a30a6b54feaaffa94191e891d08');
 /*!40000 ALTER TABLE `fe_core_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -697,4 +698,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-27 15:52:45
+-- Dump completed on 2018-07-27 16:06:21
